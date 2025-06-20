@@ -1,0 +1,10 @@
+<% layout("layouts/boilerplate") %>
+<h2 style="padding-left: 20px;">Search Results for "<%= query %>"</h2>
+<ul>
+  <% if (results.length === 0) { %>
+    <p>No listings found.</p>
+  <% } %>
+  <% results.forEach(listing => { %>
+    <li><a href="/listings/<%= listing._id %>" class="search-list"><%= listing.title %> - <%= listing.location %></a></li>
+  <% }) %>
+</ul>

@@ -1,0 +1,44 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6 col-sm-8">
+      <h3 class="text-center mb-4">Login to TravaHome</h3>
+
+      <form action="/login" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" name="username" placeholder="Enter username"
+            class="form-control form-control-sm" required>
+          <div class="invalid-feedback">Invalid Username.</div>
+        </div>
+        <div class="mb-3 password-wrapper">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" id="password"
+            class="form-control form-control-sm" placeholder="Enter password" required>
+        <button type="button" class="toggle-password" onclick="togglePassword()">Show</button>
+        <div class="invalid-feedback">Please enter a valid password.</div>
+        </div>  
+          <button type="submit" class="btn" style="width: 80px; background-color: #ff385c;">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const pwd = document.getElementById("password");
+    const toggleBtn = document.querySelector(".toggle-password");
+
+    if (pwd.type === "password") {
+      pwd.type = "text";
+      toggleBtn.textContent = "Hide";
+    } else {
+      pwd.type = "password";
+      toggleBtn.textContent = "Show";
+    }
+  }
+</script>
+
+
+

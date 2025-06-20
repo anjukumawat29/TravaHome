@@ -1,0 +1,310 @@
+body{
+ font-family: "Nunito", sans-serif !important;
+ font-style: normal !important;
+}
+button, .btn {
+  font-family: inherit !important;
+  font-weight: 500; 
+  border-radius: 20px !important;
+  background-color: #ff385c;
+  color: #fff !important;
+}
+
+/* Base navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 70px;
+}
+
+/* Brand/logo */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.7rem !important ;
+  color: #ff385c !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.navbar-brand i {
+  font-size: 1.7rem;
+  color: #ff385c;
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.custom-dark {
+  color: #313232 !important;        
+  font-size: 17px;    
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.custom-dark:hover {
+  color: #0c0c0c !important;    
+  font-weight: 620;  
+}
+
+
+/* Search bar */
+form.d-flex input[type="search"] {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  transition: border-color 0.2s;
+}
+
+form.d-flex input[type="search"]:focus {
+  border-color: #ff385c;
+  outline: none;
+}
+
+form.d-flex button {
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-left: 6px;
+  background-color: #ff385c;
+  color: #fff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+form.d-flex button:hover {
+  background-color: #d9374d;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  form.d-flex {
+    margin-top: 10px;
+  }
+}
+
+footer a {
+  text-decoration: none;
+  color: #46494b !important; 
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #2a2b2b !important; 
+}
+
+footer {
+  font-size: 1.2rem;
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+  
+}
+
+.mycard {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s ease;
+  background: #fff;
+}
+
+.mycard:hover {
+  transform: translateY(-1px);
+}
+
+.myimg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  border-radius: 1rem;
+}
+.myimg:hover{
+  opacity: 0.7;
+}
+
+.mybody {
+  padding: 0.8rem;
+}
+
+.show-card {
+  border: none !important;
+  width: 100%;
+}
+
+.show-card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  max-height: 400px;
+
+}
+
+
+.home-hero {
+  padding: 80px 20px 50px;
+  background: linear-gradient( #e5e6ea, #f3c8c8);
+}
+
+.home-icon {
+  font-size: 4.5rem;
+  color: #ff385c;
+  margin-bottom: 10px;
+}
+
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  color: #4f5153;
+  margin-bottom: 60px;
+}
+
+
+.feature-card {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 25px 15px;
+  transition: 0.3s;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 8px 16px rgba(114, 64, 68, 0.5);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #ff385c;
+  margin-bottom: 10px;
+}
+
+.search-list {
+  color: #af374d;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: "Nunito";
+}
+
+.bigger-textarea {
+  width: 600px !important;          
+  resize: vertical;        
+}
+.custom-range {
+  width: 600px !important;       
+}
+
+hr.hr-line{
+  width: 610px !important;
+}
+.review{
+  width: 550px !important;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1.2rem 1rem 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show {
+    height: auto !important;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 14px;
+  }
+
+  .navbar-collapse .form-control {
+    border-radius: 10px;
+  }
+
+  .navbar-collapse form {
+    margin-top: 20px;
+  }
+}
+
+  .password-wrapper {
+    position: relative;
+  }
+
+  .toggle-password {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: grey !important;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+#map, .leaflet-map {
+  height: 400px;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+  .filters{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filter{
+    text-align: center;
+    margin: 0.5rem 2rem ;
+    opacity: 0.8;
+    text-decoration: none;
+    color: rgb(25, 25, 25);
+  }
+  .filter:hover{
+    cursor: pointer;
+  }
+  .filter p{
+    font-size: 1rem;
+  }
+  .tax-info{
+    display: none;
+  }
+  .tax-toggle{
+    border: 1px solid rgb(25, 25, 25);
+    border-radius:1rem;
+    height: 3.4rem;
+    padding: 1rem;
+    align-content: center;
+  }
+@media (max-width: 768px) {
+  .filters {
+    gap: 12px;
+  }
+  .filters a.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+

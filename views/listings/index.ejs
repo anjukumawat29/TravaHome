@@ -1,0 +1,24 @@
+<% layout("layouts/boilerplate") %>
+<div class="container-fluid mt-3 px-2 px-md-5">
+<%- include('filters') %>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% for (let l of allListing) { %>
+      <div class="col">
+        <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
+          <div class="mycard">
+            <img src="<%= l.image?.url %>" alt="img" class="myimg">
+            <div class="mybody">
+              <h6><b><%= l.title %></b></h6>
+              <p class="text-muted mb-1"><%= l.location %>, <%= l.country %></p>
+              <p class="fw">₹ <%= l.price.toLocaleString("en-IN") %>
+              <i class="tax-info"> &nbsp;+20%GST</i>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<script src="/js/filters.js"></script>
