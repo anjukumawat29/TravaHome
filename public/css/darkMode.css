@@ -1,0 +1,129 @@
+/* === DARK MODE STYLES === */
+.dark-theme {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Navbar */
+.dark-theme .navbar {
+  background-color: #1f1f1f !important;
+  box-shadow: none;
+}
+
+/* Links */
+.dark-theme .custom-dark,
+.dark-theme .nav-link,
+.dark-theme a {
+  color: #f1f1f1 !important;
+}
+
+/* Cards and Inputs */
+.dark-theme .mycard,
+.dark-theme .feature-card,
+.dark-theme input,
+.dark-theme .form-control,
+.dark-theme textarea {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Dark Theme Overrides */
+.dark-theme footer {
+  background-color: #1a1a1a !important;
+
+}
+
+.dark-theme footer a,
+.dark-theme footer span,
+.dark-theme footer .text-muted {
+  color: #f1f1f1 !important;
+}
+
+.dark-theme footer a:hover {
+  color: #f5de5e !important;
+  text-decoration: underline;
+}
+
+/* Navbar toggler icon (hamburger menu) visibility */
+.dark-theme .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Mobile collapse menu background */
+.dark-theme .navbar-collapse,
+.dark-theme .navbar-nav {
+  background-color: #1f1f1f !important;
+}
+
+/* Moon/Sun icon inside toggle button */
+.dark-theme #themeIcon {
+  color: #f1f1f1 !important;
+}
+.dark-theme .nav-link:hover  {
+  color: #f5de5e !important;
+}
+.dark-theme .filter:hover  {
+  color: #f5de5e !important;
+}
+
+
+/* Toggle switch */
+.dark-theme .form-check-input {
+  background-color: #555;
+  border-color: #999;
+}
+
+.dark-theme .form-check-input:checked {
+  background-color: #0d6efd; /* Bootstrap primary */
+}
+
+.dark-theme .form-check-label {
+  color: #f1f1f1;
+}
+
+.dark-theme .review-card,         /* If you have a class like this */
+.dark-theme .review,             /* Your defined class */
+.dark-theme .card,               /* If you're using Bootstrap card */
+.dark-theme .show-card,
+.dark-theme .mycard,
+.dark-theme .card-body {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+
+  border: 1px solid #444;
+}
+.dark-theme .show-card ,
+.dark-theme .show-card .card-body {
+  background: transparent !important;
+  border: none !important;
+  color: #f1f1f1; /* Optional: keep text visible */
+}
+
+/* Buttons */
+.dark-theme .btn {
+  background-color:#ff385c;
+}
+/* Dark theme delete button fix */
+.dark-theme .btn.bg-dark {
+  background-color: #dc3545 !important; /* or keep it #212529 if you prefer */
+  color: #fff !important;
+  border: none;
+}
+
+.dark-theme .mycard {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Optional: dim text for better dark contrast */
+.dark-theme .mycard .mybody h6,
+.dark-theme .mycard .mybody p {
+  color: #f1f1f1 !important;
+}
+
+/* Optional: hover effect */
+.dark-theme .mycard:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* subtle hover */
+  transform: translateY(-2px);
+}

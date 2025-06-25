@@ -25,11 +25,15 @@ const app = express();
 const dbUrl = process.env.ATLAS_URL;
 
 // Connect to DB
-main().then(() => {
-  console.log("Connected to DB");
-}).catch((err) => {
-  console.log("DB Connection Error:", err);
-});
+async function connectDB() {
+  try {
+    await mongoose.connect(dbUrl);
+    console.log("✅ Connected to DB");
+  } catch (err) {
+    console.error("❌ DB Connection Error:", err.message);
+  }
+}
+connectDB();
 
 async function main() {
   await mongoose.connect(dbUrl);
@@ -52,7 +56,7 @@ const store = MongoStore.create({
     touchAfter: 24 *3600,
 });
 
-store.on("error",()=>{
+store.on("error",(err)=>{
   console.log("Error In Mongo Session Store",err);
 })
 const sessionOptions = {
@@ -70,6 +74,8 @@ const sessionOptions = {
 
 app.use(session(sessionOptions));
 app.use(flash());
+
+
 
 //passport authentication
 app.use(passport.initialize());

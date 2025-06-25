@@ -3,7 +3,7 @@
 
 <% if (category) { %>
   <h4 class="mb-4">Category: <%= category.charAt(0).toUpperCase() + category.slice(1) %></h4>
-  <a href="/listings" class="btn mb-3" style="background-color: black;">
+  <a href="/listings" class="btn mb-3 clear-filter" >
     <i class="fa-solid fa-xmark"></i> Clear Filter
   </a>
 <% } %>
@@ -12,8 +12,8 @@
   <!-- Mobile View Buttons (visible only on small screens) -->
   <div class="d-flex d-md-none justify-content-between align-items-center mb-2" >
     <!-- More Button -->
-    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFiltersCollapse"
-     aria-expanded="false" aria-controls="mobileFiltersCollapse" style="background-color: black;">
+    <button class="btn more-button" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFiltersCollapse"
+     aria-expanded="false" aria-controls="mobileFiltersCollapse" >
       <i class="fa-solid fa-sliders"></i> More
     </button>
 
