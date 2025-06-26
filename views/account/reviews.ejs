@@ -14,9 +14,9 @@
             <small><%= review.comment %></small>
           </div>
           <% if (review.listing) { %>
-            <a href="/listings/<%= review.listing._id %>">View Listing</a>
+            <a href="/listings/<%= review.listing._id %>" class="btn btn-sm btn-primary me-2">View</a>
             <form action="/listings/<%= review.listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-sm btn-danger">Delete</button>
+                <button class="btn btn-sm btn-dark">Delete</button>
             </form>
             <% } else { %>
             <span class="text-muted">No listing found</span>
