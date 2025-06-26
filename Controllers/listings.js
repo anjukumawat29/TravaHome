@@ -139,3 +139,9 @@ module.exports.delteListing = async (req, res) => {
   res.redirect("/listings");
 };
 
+module.exports.userListings = async (req, res) => {
+  const userListings = await Listing.find({ owner: req.user._id });
+  res.render("account/listings", { userListings });
+};
+
+

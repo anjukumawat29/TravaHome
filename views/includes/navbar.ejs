@@ -20,12 +20,23 @@
 
 <!-- RIGHT: Auth Links (Desktop only) -->
     <div class="d-none d-lg-flex align-items-center ms-auto mt-2 mt-lg-0">
-      <% if (!currentUser) { %>
-        <a href="/signup" class="nav-link custom-dark me-3">Signup</a>
-        <a href="/login" class="nav-link custom-dark me-3">Login</a>
-      <% } else { %>
-        <a href="/logout" class="nav-link custom-dark">Logout</a>
-      <% } %>
+<% if (!currentUser) { %>
+  <a href="/signup" class="nav-link custom-dark me-3">Signup</a>
+  <a href="/login" class="nav-link custom-dark me-3">Login</a>
+<% } else { %>
+  <div class="dropdown me-3">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-user fa-lg"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+      <li><a class="dropdown-item" href="/account/listings">My Listings</a></li>
+      <li><a class="dropdown-item" href="/account/reviews"> My Reviews</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item text-danger" href="/logout">Logout</a></li>
+    </ul>
+  </div>
+<% } %>
+
     </div>
 
     <!-- TOGGLER BUTTON -->
@@ -47,18 +58,25 @@
           <a class="nav-link custom-dark d-lg-none" href="/listings/new">New Listing</a>
         </li>
 
-        <% if (!currentUser) { %>
-          <li class="nav-item">
-            <a class="nav-link custom-dark d-lg-none" href="/signup" >Signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-dark d-lg-none" href="/login" >Login</a>
-          </li>
-        <% } else { %>
-          <li class="nav-item">
-            <a class="nav-link custom-dark d-lg-none" href="/logout" >Logout</a>
-          </li>
-        <% } %>
+    <% if (!currentUser) { %>
+      <li class="nav-item">
+        <a class="nav-link custom-dark d-lg-none" href="/signup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-dark d-lg-none" href="/login">Login</a>
+      </li>
+    <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link custom-dark d-lg-none" href="/account/listings">My Listings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-dark d-lg-none" href="/account/reviews">My Reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-dark d-lg-none text-danger" href="/logout">Logout</a>
+      </li>
+    <% } %>
+
       </ul>
 
       <!-- Mobile Search -->

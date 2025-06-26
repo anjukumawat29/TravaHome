@@ -4,8 +4,10 @@
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     <% for (let l of allListing) { %>
       <div class="col">
+        <div class="mycard">
+            <!-- Heart icon in corner -->
+          <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
         <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
-          <div class="mycard">
             <img src="<%= l.image?.url %>" alt="img" class="myimg">
             <div class="mybody">
               <h6><b><%= l.title %></b></h6>
@@ -22,3 +24,10 @@
 </div>
 
 <script src="/js/filters.js"></script>
+<script>
+  function toggleHeart(icon) {
+    icon.classList.toggle('liked');
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
+</script>

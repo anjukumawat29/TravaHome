@@ -99,13 +99,10 @@
   color: #f1f1f1; /* Optional: keep text visible */
 }
 
-/* Buttons */
-.dark-theme .btn {
-  background-color:#ff385c;
-}
+
 /* Dark theme delete button fix */
 .dark-theme .btn.bg-dark {
-  background-color: #dc3545 !important; /* or keep it #212529 if you prefer */
+  background-color: #2c59c2 !important;
   color: #fff !important;
   border: none;
 }

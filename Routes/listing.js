@@ -6,6 +6,7 @@ const listingController = require("../Controllers/listings");
 const multer = require("multer");
 const {storage} = require("../cloudConfig");
 const upload = multer({storage});
+const Listing = require("../models/listing"); 
 
 
 // INDEX - Show all listings
