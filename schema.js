@@ -10,7 +10,7 @@ module.exports.listingSchema = Joi.object({
     location: Joi.string().required(),
     category: Joi.string().valid(
       'hotel', 'price', 'resort', 'arctic', 'villa','room',
-      'beach', 'castles', 'heritage', 'trending','rating'
+      'beach', 'castles', 'heritage', 'trending','rating','boat'
     ).required(),
     image: Joi.object({
       url: Joi.string().uri().allow('', null),
