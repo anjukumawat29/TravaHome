@@ -144,4 +144,9 @@ module.exports.userListings = async (req, res) => {
   res.render("account/listings", { userListings });
 };
 
+module.exports.reserveListing = (req, res) => {
+  const { id } = req.params;
+  req.flash("success", "Reservation submitted! Check your account for updates.");
+  res.redirect(`/listings/${id}`);
+};
 

@@ -37,5 +37,5 @@ router.route("/:id")
 router.get("/:id/edit",isLoggedIn, isOwner,
   wrapAsync(listingController.editForm));
 
-
+  router.post("/:id/reserve", isLoggedIn, listingController.reserveListing);
 module.exports = router;
