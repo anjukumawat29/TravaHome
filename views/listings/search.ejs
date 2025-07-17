@@ -1,10 +1,35 @@
 <% layout("layouts/boilerplate") %>
-<h2 style="padding-left: 20px;">Search Results for "<%= query %>"</h2>
-<ul>
+<div class="container-fluid mt-4 px-2 px-md-5">
+  <h3 class="mb-4">Search Results for "<%= query %>"</h3>
+
   <% if (results.length === 0) { %>
     <p>No listings found.</p>
+  <% } else { %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <% for (let l of results) { %>
+        <div class="col">
+          <div class="mycard position-relative">
+            <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
+            <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
+              <img src="<%= l.image?.url %>" alt="img" class="myimg">
+              <div class="mybody">
+                <h6><b><%= l.title %></b></h6>
+                <p class="text-muted mb-1"><%= l.location %>, <%= l.country %></p>
+                <p class="fw">₹ <%= l.price.toLocaleString("en-IN") %>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% } %>
+    </div>
   <% } %>
-  <% results.forEach(listing => { %>
-    <li><a href="/listings/<%= listing._id %>" class="search-list"><%= listing.title %> - <%= listing.location %></a></li>
-  <% }) %>
-</ul>
+</div>
+
+<script>
+  function toggleHeart(icon) {
+    icon.classList.toggle('liked');
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
+</script>

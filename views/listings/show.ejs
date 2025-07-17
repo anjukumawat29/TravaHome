@@ -2,7 +2,7 @@
 
 <div class="container py-4">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-10 col-lg-6">
+    <div class="col-12 col-md-10 col-lg-8">
 
       <!-- Title -->
       <h3 class="mt-3"><%= listing.title %></h3>
@@ -13,11 +13,11 @@
 
         <div class="card-body">
           <p class="card-text">
-            <b> Owned by: <i><%= listing.owner.username %></i></b>  <br>
-            <%= listing.description %><br>
-            &#8377; <%= listing.price.toLocaleString("en-in"); %><br>
-            <%= listing.location %><br>
-            <%= listing.country %><br>
+            <b>Hosted by: <i><%= listing.owner.username %></i></b>  <br>
+            <b>Description: </b><%= listing.description %><br>
+             <b>Price: </b>&#8377; <%= listing.price.toLocaleString("en-in"); %><br>
+            <b>Location: </b><%= listing.location %><br>
+            <b>Country: </b><%= listing.country %><br>
           </p>
         </div>
       </div>
@@ -71,9 +71,9 @@
       <h4 class="mb-3">All Reviews:</h4>
       <div class="row g-3">
         <% for (let review of listing.reviews) { %>
-        <div class="col-12">
-          <div class="card shadow-sm">
-            <div class="card-body">
+        <div class="col-12 col-md-6 d-flex">
+           <div class="card shadow-sm w-100">
+            <div class="card-body d-flex flex-column">
               <% if (review.author) { %>
               <h5 class="card-title">@<%= review.author.username %></h5>
               <% } else { %>
@@ -82,17 +82,133 @@
 
               <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
               <p class="card-text"><%= review.comment %></p>
-
+              <% if (currentUser && review.author && review.author._id.equals(currentUser._id)) { %>
               <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE" method="POST">
                 <button type="submit" class="btn text-white bg-dark">Delete</button>
               </form>
+              <% } %>
             </div>
           </div>
         </div>
         <% } %>
       </div>
       <% } %>
+      <hr>
+      <div class="mt-4">
+       <h4 class="mb-3">What this place offers</h4>
+<div class="row row-cols-2 row-cols-md-3 g-3 mt-4">
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-wifi-line fs-3 text-primary"></i>
+    <span>Wi-Fi</span>
+  </div>
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-parking-box-line fs-3 text-primary"></i>
+    <span>Parking</span>
+  </div>
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-snowy-line fs-3 text-primary"></i>
+    <span>Air Conditioning</span>
+  </div>
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-hotel-bed-line fs-3 text-primary"></i>
+    <span>Comfortable Beds</span>
+  </div>
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-shield-check-line fs-3 text-primary"></i>
+    <span>Security</span>
+  </div>
+  <div class="col d-flex align-items-center gap-3">
+    <i class="ri-restaurant-line fs-3 text-primary"></i>
+    <span>Restaurant</span>
+  </div>
+</div>
+<br>
+  <div class="d-flex justify-content-center">
+    <button class="btn text-white bg-dark" data-bs-toggle="modal" data-bs-target="#amenitiesModal">Show all amenities</button>
+  </div>
+
+  <!-- Modal -->
+      <div class="modal fade" id="amenitiesModal" tabindex="-1" aria-labelledby="amenitiesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="amenitiesModalLabel">What this place offers</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Scenic views</h6>
+                  <ul>
+                    <li>Lake view</li>
+                    <li>Mountain view</li>
+                    <li>Pool view</li>
+                  </ul>
+                  <hr>
+
+                  <h6>Bathrooms</h6>
+                  <ul>
+                    <li>Cleaning products</li>
+                    <li>Shampoo</li>
+                    <li>Hot Water</li>
+                  </ul>
+                  <hr>
+
+                  <h6>Bedroom & laundry</h6>
+                  <ul>
+                    <li>Essentials</li>
+                    <li>Hangers</li>
+                    <li>Bed linen</li>
+                  </ul>
+                  <hr>
+                </div>
+                <div class="col-md-6">
+                  <h6>Entertainment</h6>
+                  <ul>
+                    <li>TV with cable</li>
+                    <li>Bluetooth sound system</li>
+                    <li>Pool table</li>
+                  </ul>
+                  <hr>
+
+                  <h6>Outdoor</h6>
+                  <ul>
+                    <li>Balcony</li>
+                    <li>Garden</li>
+                    <li>Firepit</li>
+                  </ul>
+                  <hr>
+
+                  <h6>Kitchen & dining</h6>
+                  <ul>
+                    <li>Utensils</li>
+                    <li>Dining table</li>
+                    <li>Freezer</li>
+                  </ul>
+                  <hr>
+
+                  <h6>Location features</h6>
+                  <ul>
+                    <li>Waterfront</li>
+                    <li>Private entrance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
+      <div class="mt-4 mb-5">
+      <h4>Where you'll be</h4>
+      <div id="map" style="height: 400px; border-radius: 10px; overflow: hidden;">
         <%- include("../includes/map", { listing, maptilerKey }) %>
+      </div>
+    </div>
     </div>
   </div>
 </div>
