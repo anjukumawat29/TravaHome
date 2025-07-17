@@ -83,7 +83,8 @@
               <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
               <p class="card-text"><%= review.comment %></p>
               <% if (currentUser && review.author && review.author._id.equals(currentUser._id)) { %>
-              <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE" method="POST">
+              <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE" method="POST"
+                onsubmit="return confirm('Are you sure you want to delete this?')">
                 <button type="submit" class="btn text-white bg-dark">Delete</button>
               </form>
               <% } %>
