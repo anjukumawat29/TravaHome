@@ -126,8 +126,15 @@
 }
 
 .dark-theme #amenitiesModal {
-  color : black;
+color: black;
 }
 .dark-theme .tax-toggle{
   border-color: #f1f1f1;
 }
+
+.dark-theme .review-list {
+  background-color: rgb(63, 63, 63) ;
+  color: #f1f1f1 ;
+}
+
+

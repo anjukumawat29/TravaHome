@@ -41,3 +41,25 @@ module.exports.logout = (req,res,next)=>{
     });
   
 };
+module.exports.showWishlist = async (req, res) => {
+  const user = await User.findById(req.user._id).populate('wishlist');
+  res.render('account/wishlist', { listings: user.wishlist });
+};
+
+module.exports.addToWishlist = async (req, res) => {
+  const listingId = req.params.id;
+  const user = await User.findById(req.user._id);
+  if (!user.wishlist.includes(listingId)) {
+    user.wishlist.push(listingId);
+    await user.save();
+  }
+  res.redirect('back');
+};
+
+module.exports.removeFromWishlist = async (req, res) => {
+  const listingId = req.params.id;
+  await User.findByIdAndUpdate(req.user._id, {
+    $pull: { wishlist: listingId }
+  });
+  res.redirect('back');
+};

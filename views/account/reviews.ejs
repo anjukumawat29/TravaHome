@@ -5,9 +5,9 @@
   <% if (reviews.length === 0) { %>
     <p>You haven’t reviewed any listings yet.</p>
   <% } else { %>
-    <ul class="list-group">
+    <ul class="list-group mb-3">
       <% reviews.forEach(review => { %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item review-list d-flex justify-content-between align-items-center">
           <div>
             <strong><%= review.listing?.title || "Listing Deleted or Missing" %></strong>
             <br>
@@ -15,10 +15,10 @@
           </div>
           <% if (review.listing) { %>
              <div class="d-flex gap-2">
-            <a href="/listings/<%= review.listing._id %>" class="btn btn-sm btn-primary">View</a>
+            <a href="/listings/<%= review.listing._id %>" class="btn btn-sm btn-primary px-4 py-2">View</a>
             <form action="/listings/<%= review.listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST"
               onsubmit="return confirm('Are you sure you want to delete this?')">
-                <button class="btn btn-sm btn-dark">Delete</button>
+                <button class="btn btn-sm btn-dark px-4 py-2">Delete</button>
             </form>
             </div>
             <% } else { %>
