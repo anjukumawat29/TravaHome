@@ -12,8 +12,8 @@ button, .btn {
 
 /* Base navbar */
 .navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color:#f7f7f7;
+  box-shadow: 0 1px 2px rgba(0.1, 0, 0, 0.1);
   height: 70px;
 }
 
@@ -103,7 +103,7 @@ footer a:hover {
 
 footer {
   font-size: 1.2rem;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-top: 1px solid #dee2e6;
   
 }
@@ -178,7 +178,7 @@ footer {
   background-color: white;
   border: 1px solid #dee2e6;
   border-radius: 12px;
-  padding: 25px 15px;
+  padding: 20px 10px;
   transition: 0.3s;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
@@ -273,7 +273,7 @@ hr.hr-line{
   }
   .filter{
     text-align: center;
-    margin: 0.5rem 2rem ;
+    margin: 0.5rem 1.2rem ;
     opacity: 0.8;
     text-decoration: none;
     color: rgb(25, 25, 25);
@@ -282,30 +282,26 @@ hr.hr-line{
     cursor: pointer;
   }
   .filter p{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .tax-info{
     display: none;
   }
   .tax-toggle{
     border: 1px solid rgb(25, 25, 25);
-    border-radius:1rem;
-    height: 3.4rem;
-    padding: 1rem;
+    border-radius:1.4rem;
+    height: 3.2rem;
+    padding: 0.8rem;
     align-content: center;
   }
 @media (max-width: 768px) {
-  .filters {
-    gap: 12px;
-  }
-  .filters a.filter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
 }
-
  .more-button , .clear-filter{
   background-color: #353434 !important;
 }
@@ -322,4 +318,9 @@ hr.hr-line{
 .wishlist-icon.liked {
   color: #ff385c; /* Airbnb red */
 }
-
+.icon-dark {
+  color: #313232;
+}
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}

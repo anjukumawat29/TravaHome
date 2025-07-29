@@ -6,7 +6,8 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
-    }
+    },
+    
     // username and password will be automatically handled by passport-local-mongoose
 });
 

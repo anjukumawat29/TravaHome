@@ -17,6 +17,7 @@
   color: #f1f1f1 !important;
 }
 
+
 /* Cards and Inputs */
 .dark-theme .mycard,
 .dark-theme .feature-card,
@@ -137,4 +138,9 @@ color: black;
   color: #f1f1f1 ;
 }
 
-
+.dark-theme .icon-dark {
+  color: #f1f1f1;
+}
+.dark-theme .navbar-brand {
+  color: #ff385c !important;
+}

@@ -1,0 +1,49 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container-fluid mt-3 px-2 px-md-5">
+  <h3 class="mb-4">My Wishlist</h3>
+
+  <% if (listings.length === 0) { %>
+    <p>You haven't added anything to your wishlist yet.</p>
+  <% } else { %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <% for (let l of listings) { %>
+        <div class="col">
+          <div class="mycard">
+            <i class="<%= currentUser && currentUser.wishlist.includes(l._id.toString()) ? 'fa-solid text-danger' : 'fa-regular' %> fa-heart wishlist-icon"
+            onclick="toggleWishlist('<%= l._id %>', this)"></i>
+
+            <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
+              <img src="<%= l.image?.url %>" alt="img" class="myimg">
+              <div class="mybody">
+                <h6><b><%= l.title %></b></h6>
+                <p class="text-muted mb-1"><%= l.location %>, <%= l.country %></p>
+                <p class="fw">₹ <%= l.price.toLocaleString("en-IN") %> <i class="tax-info">&nbsp;+20%GST</i></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
+</div>
+
+<script>
+  async function toggleWishlist(listingId, icon) {
+    const isWished = icon.classList.contains('fa-solid');
+    const url = `/wishlist/${listingId}/${isWished ? 'remove' : 'add'}`;
+
+    try {
+      const res = await fetch(url, { method: 'POST' });
+      if (res.ok) {
+        icon.classList.toggle('fa-solid');
+        icon.classList.toggle('fa-regular');
+        icon.classList.toggle('text-danger');
+      } else {
+        alert('Please login or try again.');
+      }
+    } catch (err) {
+      console.error('Error updating wishlist:', err);
+    }
+  }
+</script>
