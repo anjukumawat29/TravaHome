@@ -144,3 +144,6 @@ color: black;
 .dark-theme .navbar-brand {
   color: #ff385c !important;
 }
+.dark-theme #map a {
+ color: #1e1e1e !important;
+}
