@@ -50,6 +50,18 @@
 
       <!-- Right: Social -->
       <div>
+        <span class="dropdown me-3">
+          <a href="#" class="text-muted" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe"></i>
+          </a>
+          <ul class="dropdown-menu rounded" aria-labelledby="languageDropdown">
+          <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+          <li><a class="dropdown-item" href="#" data-lang="hi">Hindi</a></li>
+          <li><a class="dropdown-item" href="#" data-lang="es">Spanish</a></li>
+          <li><a class="dropdown-item" href="#" data-lang="fr">French</a></li>
+          <li><a class="dropdown-item" href="#" data-lang="de">German</a></li>
+          </ul>
+        </span>
         <a href="https://facebook.com/travahome" class="text-muted me-3"><i class="fab fa-facebook-f"></i></a>
         <a href="https://twitter.com/travahome" class="text-muted me-3"><i class="fab fa-twitter"></i></a>
         <a href="https://instagram.com/travahome" class="text-muted me-3"><i class="fab fa-instagram"></i></a>
@@ -58,3 +70,19 @@
     </div>
   </div>
 </footer>
+
+<script>
+ document.querySelectorAll('.dropdown-item').forEach(item => {
+  item.addEventListener('click', function (e) {
+    e.preventDefault();
+    const selectedLang = this.innerText;
+    Swal.fire({
+      title: 'Language Selected',
+      text: `You selected: ${selectedLang}`,
+      icon: 'success',
+      timer: 2000,
+      showConfirmButton: false
+    });
+  });
+});
+</script>

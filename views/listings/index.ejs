@@ -21,6 +21,12 @@
       </div>
     <% } %>
   </div>
+  <div id="offerCard" class="position-fixed bottom-0 start-0 m-4 p-2 rounded d-flex flex-column gap-2 text-dark">
+  <button class="btn-close align-self-end" onclick="this.parentElement.remove()"></button>
+  <img src="https://miro.medium.com/v2/resize:fit:1200/1*wkTSRqhNkRQnMs2lHnEhVQ.png" class="rounded" />
+  <strong class="small">No Service Fee for First Booking!</strong>
+  <a href="https://www.airbnb.co.in/help" class="btn btn-dark btn-sm rounded-pill">Know more</a>
+  </div>
 </div>
 
 <script src="/js/filters.js"></script>
@@ -31,3 +37,4 @@
     icon.classList.toggle('fa-solid');
   }
 </script>
+

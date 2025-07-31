@@ -147,3 +147,6 @@ color: black;
 .dark-theme #map a {
  color: #1e1e1e !important;
 }
+.dark-theme .dropdown-menu {
+  background-color: #2f2e2e;
+}

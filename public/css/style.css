@@ -322,6 +322,27 @@ hr.hr-line{
 .icon-dark {
   color: #313232;
 }
-.navbar .dropdown-toggle::after {
-  display: none !important;
+
+#offerCard {
+  width: 220px;
+  z-index: 1050;
+  background-color: #c8d0d8;
+  transform: translateY(120px);
+  animation: slideUp 1s ease-out forwards;
 }
+
+@keyframes slideUp {
+  to {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+#offerCard .btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
