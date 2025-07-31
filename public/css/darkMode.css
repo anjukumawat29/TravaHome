@@ -24,7 +24,7 @@
 .dark-theme input,
 .dark-theme .form-control,
 .dark-theme textarea {
-  background-color: #1e1e1e;
+  background-color: #2a2a2a;
   color: #f1f1f1;
 }
 
@@ -148,5 +148,8 @@ color: black;
  color: #1e1e1e !important;
 }
 .dark-theme .dropdown-menu {
-  background-color: #2f2e2e;
+  background-color: #363535;
+}
+.dark-theme .dropdown-menu :hover {
+  color: violet!important;
 }
