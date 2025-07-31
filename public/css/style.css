@@ -61,10 +61,6 @@ form.d-flex input[type="search"] {
   transition: border-color 0.2s;
 }
 
-form.d-flex input[type="search"]:focus {
-  border-color: #ff385c;
-  outline: none;
-}
 
 form.d-flex button {
   border-radius: 20px;
@@ -150,14 +146,14 @@ footer {
 
 
 .home-hero {
-  padding: 80px 20px 50px;
+  padding: 50px 20px;
   background: linear-gradient( #e5e6ea, #f3c8c8);
 }
 
 .home-icon {
   font-size: 4.5rem;
   color: #ff385c;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 
@@ -170,7 +166,7 @@ footer {
 .home-subtitle {
   font-size: 1.1rem;
   color: #4f5153;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 

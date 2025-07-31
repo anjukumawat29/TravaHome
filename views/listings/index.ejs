@@ -10,9 +10,9 @@
           <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
             <img src="<%= l.image?.url %>" alt="img" class="myimg">
             <div class="mybody">
-              <h6><b><%= l.title %></b></h6>
-              <p class="text-muted mb-1"><%= l.location %>, <%= l.country %></p>
-              <p class="fw">₹ <%= l.price.toLocaleString("en-IN") %>
+              <h6 class="mb-0"><b><%= l.title %></b></h6>
+              <p class="mb-0"><%= l.location %>, <%= l.country %></p>
+              <p class="fw text-muted">₹ <%= l.price.toLocaleString("en-IN") %> 
               <i class="tax-info"> &nbsp;+20%GST</i>
               </p>
             </div>
