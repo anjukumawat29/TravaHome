@@ -12,7 +12,7 @@
   <!-- Mobile View Buttons (visible only on small screens) -->
   <div class="d-flex d-md-none justify-content-between align-items-center mb-2" >
     <!-- More Button -->
-    <button class="btn more-button" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFiltersCollapse"
+    <button class="btn more-button py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFiltersCollapse"
      aria-expanded="false" aria-controls="mobileFiltersCollapse" >
       <i class="fa-solid fa-sliders"></i> More
     </button>
@@ -61,20 +61,33 @@
         <i class="fa-solid fa-hotel"></i><p>Hotels</p>
       </a>
       <a href="/listings?category=room" class="filter">
-      <i class="fa-solid fa-bed"></i>
-      <p>Room</p>
-    </a>
+        <i class="fa-solid fa-bed"></i><p>Room</p>
+      </a>
       <a href="/listings?category=boat" class="filter">
-      <i class="fa-solid fa-sailboat"></i>
-      <p>Boat</p>
-    </a>
-    
+        <i class="fa-solid fa-sailboat"></i><p>Boat</p>
+      </a>
+      <a href="/listings?category=apartment" class="filter">
+        <i class="fa-solid fa-building"></i><p>Apartment</p>
+      </a>
+      <a href="/listings?category=new" class="filter">
+        <i class="fa-solid fa-key"></i><p>New</p>
+      </a>
+      <a href="/listings?category=woodlands" class="filter">
+        <i class="fa-solid fa-tree-city"></i><p>Woodlands</p>
+      </a>
+      <a href="/listings?category=lake" class="filter">
+        <i class="fa-solid fa-water"></i><p>Lake</p>
+      </a>
     </div>
   </div>
 
 
   <!-- Desktop View (unchanged) -->
-  <div class="filters d-none d-md-flex" >
+  <div class="filters-wrapper d-none d-md-flex align-items-center ">
+    <div class="ms-auto px-2">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+  <div class="filters-slider d-flex overflow-auto flex-nowrap">
     <a href="/listings?category=trending" class="filter">
       <i class="fa-solid fa-fire"></i><p>Trending</p>
     </a>
@@ -106,20 +119,80 @@
       <i class="fa-solid fa-hotel"></i><p>Hotels</p>
     </a>
     <a href="/listings?category=room" class="filter">
-    <i class="fa-solid fa-bed"></i>
-    <p>Room</p>
+      <i class="fa-solid fa-bed"></i><p>Room</p>
     </a>
     <a href="/listings?category=boat" class="filter">
-      <i class="fa-solid fa-sailboat"></i>
-      <p>Boat</p>
+      <i class="fa-solid fa-sailboat"></i><p>Boat</p>
     </a>
-
-    <!-- Tax Toggle -->
-    <div class="tax-toggle ms-auto">
-      <div class="form-check form-switch">
-        <input class="form-check-input" role="switch" type="checkbox" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
-      </div>
+    <a href="/listings?category=apartment" class="filter">
+      <i class="fa-solid fa-building"></i><p>Apartment</p>
+    </a>
+    <a href="/listings?category=new" class="filter">
+      <i class="fa-solid fa-key"></i><p>New</p>
+    </a>
+    <a href="/listings?category=woodlands" class="filter">
+      <i class="fa-solid fa-tree-city"></i><p>Woodlands</p>
+    </a>
+    <a href="/listings?category=lake" class="filter">
+      <i class="fa-solid fa-water"></i><p>Lake</p>
+    </a>
+    <a href="/listings?category=countryside" class="filter">
+      <i class="fa-solid fa-house-chimney-window"></i><p>Countryside</p>
+    </a>
+    <a href="/listings?category=bed-and-breakfasts" class="filter">
+      <i class="fa-solid fa-mug-hot"></i><p>Breakfasts</p>
+    </a>
+  </div>
+  <div class="ms-auto px-4 mb-3">
+      <i class="fa-solid fa-chevron-right"></i>
+  </div>
+  <!-- Tax Toggle -->
+  <div class="tax-toggle ms-auto mb-3">
+    <div class="form-check form-switch">
+      <input class="form-check-input" role="switch" type="checkbox" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
     </div>
   </div>
+</div>
 <% } %>
+<style>
+ .filters-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+}
+
+.filters-slider {
+  display: flex;
+  scrollbar-width: none;
+  flex: 1;
+}
+.filters-slider::-webkit-scrollbar {
+  display: none;
+}
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const leftArrow = document.querySelector(".fa-chevron-left");
+    const rightArrow = document.querySelector(".fa-chevron-right");
+    const slider = document.querySelector(".filters-slider");
+
+    // Scroll amount
+    const scrollAmount = 200;
+
+    leftArrow.addEventListener("click", () => {
+      slider.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    rightArrow.addEventListener("click", () => {
+      slider.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>

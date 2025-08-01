@@ -7,7 +7,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    
+    wishlist: [
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Listing"
+  }
+]
+
     // username and password will be automatically handled by passport-local-mongoose
 });
 

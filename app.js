@@ -19,7 +19,7 @@ const User = require("./models/users");
 const listingsRouter = require("./Routes/listing.js");
 const reviewsRouter = require("./Routes/review.js");
 const userRouter = require("./Routes/user.js");
-
+const wishlistRoutes = require("./Routes/wishlist");
 const app = express();
 
 const dbUrl = process.env.ATLAS_URL;
@@ -100,7 +100,10 @@ app.get("/", (req, res) => {
 
 app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
-app.use("/",userRouter)
+app.use("/",userRouter);
+app.use("/wishlist", wishlistRoutes);
+app.use("/account/wishlist", wishlistRoutes);
+
 
 // Catch undefined routes
 app.use((req, res, next) => {

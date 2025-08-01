@@ -9,7 +9,9 @@
       <% for (let l of results) { %>
         <div class="col">
           <div class="mycard position-relative">
-            <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
+            <i class="<%= currentUser && currentUser.wishlist.includes(l._id.toString()) ? 'fa-solid text-danger' : 'fa-regular' %> fa-heart wishlist-icon"
+              onclick="toggleWishlist('<%= l._id %>', this)">
+            </i>
             <a href="/listings/<%= l._id %>" class="text-decoration-none text-dark">
               <img src="<%= l.image?.url %>" alt="img" class="myimg">
               <div class="mybody">
@@ -24,10 +26,4 @@
   <% } %>
 </div>
 
-<script>
-  function toggleHeart(icon) {
-    icon.classList.toggle('liked');
-    icon.classList.toggle('fa-regular');
-    icon.classList.toggle('fa-solid');
-  }
-</script>
+<script src="/js/wishlist.js"></script>
