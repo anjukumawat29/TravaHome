@@ -1,4 +1,4 @@
-# 🏠 TravaHome – Travel Stay Listing Web App
+# 🌐🏩 TravaHome – Travel Stay Listing Web App
 
 [Live Demo 🚀](https://travahome-y8v7.onrender.com)
 
