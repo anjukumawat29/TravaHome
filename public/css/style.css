@@ -297,12 +297,17 @@ hr.hr-line{
     align-content: center;
   }
 @media (max-width: 768px) {
-    .filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: space-between;
-    }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .filter {
+    flex: 1 1 calc(25% - 0.5rem); /* 4 items per row */
+    margin: 0; /* remove margin in mobile */
+  }
 }
  .more-button , .clear-filter{
   background-color: #353434 !important;
