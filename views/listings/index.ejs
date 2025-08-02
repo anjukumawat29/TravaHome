@@ -13,9 +13,12 @@
             <img src="<%= l.image?.url %>" alt="img" class="myimg">
             <div class="mybody">
               <h6 class="mb-0"><b><%= l.title %></b></h6>
-              <p class="mb-0"><%= l.location %>, <%= l.country %></p>
-              <p class="fw text-muted">₹ <%= l.price.toLocaleString("en-IN") %> 
-              <i class="tax-info"> &nbsp;+20%GST</i>
+              <p class="fw text-muted">
+                ₹ <%= l.price.toLocaleString("en-IN") %>
+                <i class="tax-info">&nbsp;+20%GST</i> 
+                <% const r = (Math.random() * 2 + 3).toFixed(1); %>
+                &nbsp;<%= r %> <i class="fa-solid fa-star"></i>
+              </p>
               </p>
             </div>
           </div>
